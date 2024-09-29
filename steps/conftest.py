@@ -4,17 +4,6 @@ import requests
 from steps.environment import context
 from pytest_bdd import scenario, given, when, then, parsers, scenarios
 
-def pytest_bdd_apply_tag(tag, function):
-    # Skip tests with known bugs.
-    if 'KEY-' in tag:
-        reason_string = "Skipping due to known issue {}".format(tag)
-        marker = pytest.mark.skip(reason=reason_string)
-        marker(function)
-        return True
-    else:
-        # Fall back to the default behavior of pytest-bdd
-        return None
-
 class Style():
   RED = "\033[31m"
   RESET = "\033[0m"

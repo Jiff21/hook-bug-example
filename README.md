@@ -1,4 +1,6 @@
-# Pytest BDD setup similar to Behave
+# Demo of pytest lack of before and after feature hook. 
+
+There is no `pytest.fixture(scope="")` that runs just inbetween features when using `scenarios('features')`. See [conftest.py](/blob/main/steps/conftest.py#L43) then run.
 
 ## Install
 
@@ -9,10 +11,6 @@ pip install -r requirements.txt
 ```
 
 ## Run
-
-### Local Run
-
-Run tests against Local Dev
 
 ```bash
 pytest --gherkin-terminal-reporter -vvs
